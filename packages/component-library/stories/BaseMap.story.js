@@ -2,9 +2,11 @@ import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { storiesOf } from '@storybook/react';
 import { withKnobs, selectV2 } from '@storybook/addon-knobs';
+import { checkA11y } from '@storybook/addon-a11y';
 import { BaseMap } from '../src';
 
 const displayName = BaseMap.displayName || 'BaseMap';
+
 //Get your mapbox token here:
 //https://www.mapbox.com/help/how-access-tokens-work/#creating-and-managing-access-tokens
 const mapboxToken = 'pk.eyJ1IjoidGhlbWVuZG96YWxpbmUiLCJhIjoiY2o1aXdoem1vMWtpNDJ3bnpqaGF1bnlhNSJ9.sjTrNKLW9daDBIGvP3_W0w';
@@ -19,7 +21,7 @@ const demoMap = () => {
     'Odyssey': 'mapbox://styles/themendozaline/cjgq6rklb000d2so1b8myaait',
     'Scenic': 'mapbox://styles/themendozaline/cj8rrlv4tbtgs2rqnyhckuqva',
   };
-  const mapboxStyle = selectV2('Mapbox Style', optionsStyle, optionsStyle['Label Maker']);
+  const mapboxStyle = selectV2('Mapbox Style', optionsStyle, optionsStyle['Lè Shine']);
 
   return (
     <BaseMap
@@ -29,8 +31,9 @@ const demoMap = () => {
   );
 };
 
-export default () => storiesOf(displayName)
+export default () => storiesOf(displayName, module)
   .addDecorator(withKnobs)
+  .addDecorator(checkA11y)
   .add(
     'Simple usage',
     (demoMap)
