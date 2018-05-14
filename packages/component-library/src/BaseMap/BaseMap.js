@@ -11,6 +11,7 @@ const mapWrapper = css`
 const navControl = css`
   position: absolute;
   right: 0;
+  z-index: 9;
 `;
 
 export default class BaseMap extends Component {
@@ -23,8 +24,8 @@ export default class BaseMap extends Component {
         longitude: -122.6765,
         latitude: 45.5231,
         zoom: 9.5,
-        minZoom: 5,
-        maxZoom: 17,
+        minZoom: 6,
+        maxZoom: 16,
         pitch: 0,
         bearing: 0,
       },

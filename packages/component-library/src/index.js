@@ -26,5 +26,6 @@ export { default as ShareCollection } from './Share/ShareCollection';
 export { default as isClient } from './utils/isClient';
 export { default as CivicVictoryTheme } from "./VictoryTheme/VictoryThemeIndex";
 export { default as BaseMap } from './BaseMap/BaseMap';
+export { default as GeoJSONMap } from './GeoJSONMap/GeoJSONMap';
 
 import './fonts.css';
